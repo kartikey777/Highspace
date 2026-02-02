@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --font-heading: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --color-bg: #f8f5f0;
+  --color-surface: #fffefb;
+  --color-text: #2c2825;
+  --color-muted: #5c564f;
+  --color-border: #e5e0d8;
+  --color-accent: #8b7355;
+  --color-accent-hover: #6f5a44;
+  --color-hero-bg: #f5f0e8;
+
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive base */
+@media (max-width: 768px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* Touch-friendly tap targets on small screens */
+@media (hover: none) and (pointer: coarse) {
+  .nav__link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer__link {
+    padding: 0.35em 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
