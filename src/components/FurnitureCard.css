@@ -30,6 +30,13 @@
   line-height: 1.45;
 }
 
+.furniture-card__add-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
 .furniture-card__add {
   display: inline-flex;
   align-items: center;
@@ -43,6 +50,18 @@
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s, transform 0.15s;
+}
+
+.furniture-card__added {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-weight: 500;
+  animation: furniture-card-fade 2.5s ease-out forwards;
+}
+
+@keyframes furniture-card-fade {
+  0%, 20% { opacity: 1; }
+  80%, 100% { opacity: 0; }
 }
 
 .furniture-card__add:hover {

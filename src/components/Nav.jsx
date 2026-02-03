@@ -10,9 +10,16 @@ export default function Nav() {
   const { content } = useAdminContent();
   const { count: cartCount } = useCart();
 
+  const cartLink = (
+    <Link to="/cart" className="nav__link nav__link--cart" onClick={() => setMenuOpen(false)}>
+      Cart {cartCount > 0 && <span className="nav__cart-count">{cartCount}</span>}
+    </Link>
+  );
+
   return (
     <nav className={`nav ${menuOpen ? 'nav--open' : ''}`}>
       <Link to="/admin" className="nav__brand" title="Admin">{content.hero.title}</Link>
+      <div className="nav__cart-bar">{cartLink}</div>
       <button
         type="button"
         className="nav__toggle"
@@ -33,11 +40,7 @@ export default function Nav() {
             <Link to={`/${cat.id}`} className={`nav__link ${location.pathname === `/${cat.id}` ? 'active' : ''}`} onClick={() => setMenuOpen(false)}>{cat.title}</Link>
           </li>
         ))}
-        <li>
-          <Link to="/cart" className="nav__link nav__link--cart" onClick={() => setMenuOpen(false)}>
-            Cart {cartCount > 0 && <span className="nav__cart-count">{cartCount}</span>}
-          </Link>
-        </li>
+        <li className="nav__cart-in-menu">{cartLink}</li>
       </ul>
     </nav>
   );

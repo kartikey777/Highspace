@@ -9,9 +9,8 @@ function buildWhatsAppUrl(cart) {
   const lines = [WHATSAPP_MESSAGE, ''];
   cart.forEach((entry, i) => {
     lines.push(`${i + 1}. ${entry.item.name}`);
-    (entry.item.images || []).slice(0, 3).forEach((url) => {
-      lines.push(`   ${url}`);
-    });
+    const firstImage = entry.item.images?.[0];
+    if (firstImage) lines.push(`   ${firstImage}`);
     lines.push('');
   });
   const text = lines.join('\n').trim();

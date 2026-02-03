@@ -147,6 +147,14 @@
   border-radius: 999px;
 }
 
+.nav__cart-bar {
+  display: none;
+}
+
+.nav__cart-in-menu {
+  display: list-item;
+}
+
 @media (max-width: 768px) {
   .nav {
     padding: 0.75rem 1rem;
@@ -156,9 +164,18 @@
     font-size: 1.05rem;
   }
 
+  .nav__cart-bar {
+    display: inline-flex;
+    order: 2;
+  }
+
   .nav__toggle {
     display: flex;
-    order: 2;
+    order: 3;
+  }
+
+  .nav__cart-in-menu {
+    display: none;
   }
 
   .nav__links {
